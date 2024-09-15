@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
 
+type FormData = {
+  firstName: string
+  secondName:string
+  lastName: string
+  secondLastName:string 
+  email: string
+  phoneNumber: string
+  documentNumber: string
+  documentType: string 
+  
+}
 interface Select {
   label: string;
+  register: UseFormRegister<FormData>
+  errors: FieldErrors<FormData>
   options: {value:string, label:string }[]
 }
-const SelectGroup = ({label, options}: Select) => {
+const SelectGroup = ({label, options, register, errors}: Select) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
 
@@ -21,6 +35,7 @@ const SelectGroup = ({label, options}: Select) => {
 
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
+          {...register('documentType')}
           value={selectedOption}
           onChange={(e) => {
             setSelectedOption(e.target.value);
@@ -64,6 +79,7 @@ const SelectGroup = ({label, options}: Select) => {
           </svg>
         </span>
       </div>
+      <p className='text-red-500 text-sm'>{errors.documentType?.message}</p>
     </div>
   );
 };
