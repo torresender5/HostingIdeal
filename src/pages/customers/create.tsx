@@ -27,9 +27,9 @@ const CreateCustomer = () => {
               </h3>
             </div>
             <form action="#">
-              <div className="p-6.5">
-                <div className="mb-4.5 grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-                  <div className="w-full ">
+              <div className="p-6.5 grid grid-cols-1">
+                <div className="mb-4.5 gap-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  <div className="w-full">
                     <label className="mb-2.5 block text-black dark:text-white">
                       First name
                     </label>
@@ -39,7 +39,7 @@ const CreateCustomer = () => {
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
                   </div>
-                  <div className="w-full ">
+                  <div className="w-full">
                     <label className="mb-2.5 block text-black dark:text-white">
                       Second Name
                     </label>
@@ -50,7 +50,7 @@ const CreateCustomer = () => {
                     />
                   </div>
 
-                  <div className="w-full ">
+                  <div className="w-full">
                     <label className="mb-2.5 block text-black dark:text-white">
                       Last name
                     </label>
@@ -94,7 +94,7 @@ const CreateCustomer = () => {
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
                   </div>
-                  <div className="w-full col-span-2">
+                  <div className="w-full md:col-span-2">
                     <label className="mb-2.5 block text-black dark:text-white">
                         Email <span className="text-meta-1">*</span>
                     </label>
@@ -105,31 +105,6 @@ const CreateCustomer = () => {
                     />
                     </div>
                 </div>
-
-                <div className="mb-4.5">
-                  <label className="mb-2.5 block text-black dark:text-white">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Select subject"
-                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                  />
-                </div>
-
-                <SelectGroupOne />
-
-                <div className="mb-6">
-                  <label className="mb-2.5 block text-black dark:text-white">
-                    Message
-                  </label>
-                  <textarea
-                    rows={6}
-                    placeholder="Type your message"
-                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                  ></textarea>
-                </div>
-
                 <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
                   Send Message
                 </button>
